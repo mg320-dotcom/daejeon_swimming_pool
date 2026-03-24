@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6d42b3aa833487c22311e956d342d2e1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<script>
+    var pools = [{"name": "사이언스도룡스포츠센터", "lat": 36.3848202861623, "lng": 127.378066783125, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "에프스포렉스", "lat": 36.3384262376109, "lng": 127.43234827127, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "용운국제수영장", "lat": 36.3251825526552, "lng": 127.466548742559, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "스위밍키즈", "lat": 36.3159210902373, "lng": 127.441243765835, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "한밭수영장", "lat": 36.3173370007388, "lng": 127.428013823451, "tel": "정보 없음", "day_type": "평일", "times": [["0:00", "6:00"], ["14:30", "16:50"], ["20:30", "23:59"]]}, {"name": "한밭수영장", "lat": 36.3173370007388, "lng": 127.428013823451, "tel": "정보 없음", "day_type": "토요일", "times": [["0:00", "6:00"], ["17:30", "23:59"]]}, {"name": "한밭수영장", "lat": 36.3173370007388, "lng": 127.428013823451, "tel": "정보 없음", "day_type": "일요일", "times": [["0:00", "6:00"], ["17:30", "23:59"]]}, {"name": "스위밍키즈 태평점", "lat": 36.3183892743002, "lng": 127.392331493133, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "대전광역시 서구건강체련관 (수영장)", "lat": 36.3550674046594, "lng": 127.383372818339, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "평송청소년문화센터수영장", "lat": 36.3658577671111, "lng": 127.391850186536, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "올림픽기념 국민생활관", "lat": 36.3547890167237, "lng": 127.373244411079, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "씨엘키즈 어린이수영장", "lat": 36.3048727696891, "lng": 127.355224253519, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "서구국민체육센터 (수영장)", "lat": 36.3037791474272, "lng": 127.36288842982, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "스위밍 키즈", "lat": 36.3501505365073, "lng": 127.378187956852, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "프렌즈 아쿠아 키즈풀", "lat": 36.3043802541468, "lng": 127.332968406513, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "로키 스위밍 클럽", "lat": 36.3499633715866, "lng": 127.387245447251, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "도마실 국민체육센터 (수영장)", "lat": 36.312422021258, "lng": 127.385209967155, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "뉴그린 수영장", "lat": 36.3594532915535, "lng": 127.377867625055, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "천마 하이파이브 수영장", "lat": 36.3434421879206, "lng": 127.386245704101, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "진잠다목적체육관", "lat": 36.2946119503769, "lng": 127.320606844013, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "구즉국민체육센터 (수영장)", "lat": 36.4350114787004, "lng": 127.384099963165, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "(주)월드스포츠 컨설팅", "lat": 36.3619662173402, "lng": 127.323555313924, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "유성구 종합사회복지관 수영장", "lat": 36.3529357706043, "lng": 127.339611735614, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "파랑새아쿠아키즈", "lat": 36.4253770675965, "lng": 127.401384139672, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "나래스포츠", "lat": 36.3916031780944, "lng": 127.310688687833, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "알키즈업스포츠", "lat": 36.3516930871274, "lng": 127.331088602076, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "(주)나래 아쿠아 키즈풀", "lat": 36.3303250949488, "lng": 127.335349931378, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "스위밍 키즈", "lat": 36.3829778804671, "lng": 127.320514487799, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "J 스위밍센터", "lat": 36.3870673106787, "lng": 127.30964869937, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "스위밍키즈 도안점", "lat": 36.3316503009198, "lng": 127.337551074702, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "대덕구청소년수련관 수영장", "lat": 36.3643292095566, "lng": 127.434183483524, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "체육재활원수영장", "lat": 36.3684046514853, "lng": 127.419019016981, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "대덕국민체육센터 수영장", "lat": 36.4455284364754, "lng": 127.413593612961, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "스위밍키즈 송촌점", "lat": 36.3690462186055, "lng": 127.441508127943, "tel": "정보 없음", "day_type": "nan", "times": []}, {"name": "자운대 추목 수영장", "lat": 36.4135665325896, "lng": 127.339751726498, "tel": "정보 없음", "day_type": "평일", "times": [["0:00", "5:40"], ["8:10", "9:00"], ["12:00", "13:30"], ["19:40", "23:59"]]}, {"name": "자운대 추목 수영장", "lat": 36.4135665325896, "lng": 127.339751726498, "tel": "정보 없음", "day_type": "토요일", "times": [["0:00", "7:00"], ["9:00", "10:00"], ["12:00", "13:00"], ["15:00", "16:00"], ["17:40", "23:59"]]}, {"name": "자운대 추목 수영장", "lat": 36.4135665325896, "lng": 127.339751726498, "tel": "정보 없음", "day_type": "일요일", "times": [["0:00", "7:00"], ["9:00", "10:00"], ["12:00", "13:00"], ["15:00", "16:00"], ["17:40", "23:59"]]}, {"name": "유성 반다비 수영장", "lat": 36.3783347656852, "lng": 127.344507401191, "tel": "정보 없음", "day_type": "평일", "times": [["0:00", "7:50"], ["8:50", "14:50"], ["15:50", "17:50"], ["18:50", "23:59"]]}, {"name": "유성 반다비 수영장", "lat": 36.3783347656852, "lng": 127.344507401191, "tel": "정보 없음", "day_type": "토요일", "times": [["0:00", "6:10"], ["8:10", "9:10"], ["11:10", "12:40"], ["14:40", "15:10"], ["17:10", "23:59"]]}, {"name": "유성 반다비 수영장", "lat": 36.3783347656852, "lng": 127.344507401191, "tel": "정보 없음", "day_type": "일요일", "times": [["0:00", "9:10"], ["11:10", "12:40"], ["14:40", "15:10"], ["17:10", "23:59"]]}, {"name": "충남대 스포렉스 수영장", "lat": 36.3674377559449, "lng": 127.343422294906, "tel": "정보 없음", "day_type": "평일", "times": [["0:00", "6:00"], ["13:00", "15:00"], ["21:30", "23:59"]]}, {"name": "충남대 스포렉스 수영장", "lat": 36.3674377559449, "lng": 127.343422294906, "tel": "정보 없음", "day_type": "토요일", "times": [["0:00", "6:00"], ["13:00", "15:00"], ["18:00", "23:59"]]}, {"name": "충남대 스포렉스 수영장", "lat": 36.3674377559449, "lng": 127.343422294906, "tel": "정보 없음", "day_type": "일요일", "times": [["0:00", "6:00"], ["13:00", "15:00"], ["18:00", "23:59"]]}, {"name": "한밭복합문화체육센터", "lat": 36.3086871102323, "lng": 127.40912535021, "tel": "정보 없음", "day_type": "평일", "times": [["0:00", "8:00"], ["9:00", "15:00"], ["19:00", "23:59"]]}, {"name": "한밭복합문화체육센터", "lat": 36.3086871102323, "lng": 127.40912535021, "tel": "정보 없음", "day_type": "토요일", "times": [["0:00", "9:00"], ["13:00", "14:00"], ["17:30", "23:59"]]}, {"name": "한밭복합문화체육센터", "lat": 36.3086871102323, "lng": 127.40912535021, "tel": "정보 없음", "day_type": "일요일", "times": [["0:00", "9:00"], ["13:00", "14:00"], ["17:30", "23:59"]]}];
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Leaflet 지도 객체 가져오기 (folium이 만든 첫번째 지도)
+        var map = null;
+        for (var key in window) {
+            if (window[key] instanceof L.Map) {
+                map = window[key];
+                break;
+            }
+        }
+
+        if (!map) return;
+
+        var now = new Date();
+        // 한국 시간 기준 요일 판별 (0:일, 1~5:평일, 6:토)
+        var day = now.getDay();
+        var dayType = (day === 0) ? "일요일" : (day === 6 ? "토요일" : "평일");
+        var currMin = now.getHours() * 60 + now.getMinutes();
+
+        pools.forEach(function(p) {
+            // 오늘 운영하는 요일의 데이터만 표시
+            if (p.day_type !== dayType) return;
+
+            var isCleaning = false;
+            var color = "blue";
+            var statusTxt = "입장 가능";
+            var nextMsg = "오늘 정비 종료";
+
+            p.times.forEach(function(time) {
+                var s = time[0].split(':');
+                var e = time[1].split(':');
+                var startMin = parseInt(s[0]) * 60 + parseInt(s[1]);
+                var endMin = parseInt(e[0]) * 60 + parseInt(e[1]);
+
+                if (currMin >= startMin && currMin < endMin) {
+                    isCleaning = true;
+                    color = "red";
+                    statusTxt = "입장 불가 (정비 중)";
+                    nextMsg = "종료까지 " + (endMin - currMin) + "분 남음";
+                } else if (currMin < startMin && color === "blue" && nextMsg === "오늘 정비 종료") {
+                    nextMsg = "다음 정비까지 " + (startMin - currMin) + "분 남음";
+                }
+            });
+
+            // 마커 생성 (tint 아이콘 적용)
+            var marker = L.marker([p.lat, p.lng], {
+                icon: L.AwesomeMarkers.icon({
+                    icon: 'tint',
+                    markerColor: color,
+                    prefix: 'fa'
+                })
+            }).addTo(map);
+
+            var popupContent = `
+                <div style="width:200px; font-family: sans-serif;">
+                    <b style="font-size:14px;">${p.name}</b><br>
+                    <hr style="margin:5px 0;">
+                    상태: <b style="color:${color};">${statusTxt}</b><br>
+                    안내: ${nextMsg}<br>
+
+                    <small style="color:gray;">(접속기준: ${now.getHours()}시 ${now.getMinutes()}분)</small>
+                </div>
+            `;
+            marker.bindPopup(popupContent);
+        });
+    });
+</script>
+    
+            <div class="folium-map" id="map_6d42b3aa833487c22311e956d342d2e1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6d42b3aa833487c22311e956d342d2e1 = L.map(
+                "map_6d42b3aa833487c22311e956d342d2e1",
+                {
+                    center: [36.372389, 127.32304],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12.3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_affe30b9779d33db6200961505efca2f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_affe30b9779d33db6200961505efca2f.addTo(map_6d42b3aa833487c22311e956d342d2e1);
+        
+</script>
+</html>
